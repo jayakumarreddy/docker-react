@@ -21,6 +21,10 @@ RUN npm run build
 # Stage 1 is for serving builded static files with nginx
 FROM nginx
 
+#This is nothing to do in local machines. just ofr dev info
+#But this is used by AWS BeanStalk for port mapping
+EXPOSE 80
+
 COPY --from=build-stage /app/build/ /usr/share/nginx/html
 
 #copy nginx config here
