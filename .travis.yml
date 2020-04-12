@@ -4,4 +4,4 @@ services:
 before_install:
   - docker build -t jay887/react-app-docker -f Dockerfile.dev .
 script:
-  - docker run jay887/react-app-docker npm run test -- --coverage
+  - docker run jay887/react-app-docker npm run test -- --watchAll=false
