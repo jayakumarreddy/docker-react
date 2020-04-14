@@ -1,18 +1,18 @@
 # Stage 0 is build stage
 FROM node:alpine as build-stage
 
-WORKDIR /app
+WORKDIR '/app'
 
 # COPY package.json prior to copying all the code files
 # This way docker will not run npm install if there is any change in the code. 
 # Only runs if there is change in package.json
-COPY package.json /app/
+COPY ./package.json ./
 
 RUN npm install
 
 # Copying all the code files to /app/.
 # This code files will stay along with node_modules in /app
-COPY ./ /app/
+COPY . . 
 
 # this will run npm build and place the build folder 
 # in /app/ in the container, as WORKDIR is /app

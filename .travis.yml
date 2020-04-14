@@ -1,3 +1,4 @@
+language: generic
 sudo: required
 services:
   - docker
@@ -8,8 +9,8 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "react-docker"
-  env: "ReactDocker-env"
+  app: "react-docker-test"
+  env: "ReactDockerTest-env"
   bucket_name: "elasticbeanstalk-us-east-1-748362436556"
   bucket_path: "react-docker"
   on:
